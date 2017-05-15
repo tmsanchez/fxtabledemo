@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package mx.tmsanchez.fxtabledemo.controller;
 
 import java.net.URL;
@@ -43,15 +42,10 @@ public class RuntimeController extends CommonController implements Initializable
     @FXML
     private TableView tableView;
 
-    public RuntimeController() {
-
-    }
-
     @FXML
     private void handleButtonAction(ActionEvent event) {
         personList = personService.getPersons();
         tableViewUtil.updateTableContent(tableView, personList);
-
     }
 
     @FXML
@@ -62,10 +56,7 @@ public class RuntimeController extends CommonController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if (tableView != null) {
-            tableViewUtil.createColumns(Person.class, tableView, headers, personList);
-            tableView.setEditable(true);
-        }
+        tableViewUtil.createColumns(Person.class, tableView, headers, personList);
     }
 
 }

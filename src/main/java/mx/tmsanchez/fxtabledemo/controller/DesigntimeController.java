@@ -36,12 +36,9 @@ public class DesigntimeController extends CommonController implements Initializa
     private final PersonService personService = new PersonService();
 
     private List<Person> personList = new ArrayList();
+
     @FXML
     private TableView tableView;
-
-    public DesigntimeController() {
-
-    }
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -58,11 +55,7 @@ public class DesigntimeController extends CommonController implements Initializa
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        if (tableView != null) {
-            tableViewUtil.assignColumns(Person.class, tableView, personList);
-            tableView.setEditable(true);
-        }
+        tableViewUtil.assignColumns(Person.class, tableView, personList);
     }
-
 
 }
